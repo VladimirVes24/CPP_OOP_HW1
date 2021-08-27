@@ -57,13 +57,61 @@ private:
     std::uint8_t m_red, m_green, m_blue, m_alpha;
 };
 
+//Task 3 ======================================================================================================================================================================================
+
+class Stack
+{
+public:
+    void reset()
+    {
+        for (int i = 0; i < stackLength; i++)
+        {
+            array[i] = 0;
+        }
+        stackLength = 0;
+    }
+
+    bool push(int num)
+    {
+        if (stackLength == 9) return false;
+        else
+        {
+            array[stackLength] = num;
+            stackLength++;
+            return true;
+        }
+    }
+
+    int pop()
+    {
+        int temp = array[stackLength];
+        array[stackLength] = 0;
+        stackLength--;
+        return temp;
+    }
+
+    void print()
+    {
+        std::cout << "\n";
+        for (int i = 0; i < stackLength; i++)
+        {
+            std::cout << array[i] << " ";
+        }
+    }
+  
+private:
+    int stackLength = 0;
+    int array[10];
+};
+
 
 
 int main()
 {
     //Task1
     Power* num = new Power();
-    num->setNumbers(3, 2);
+    std::cout << num->calculate() << "\n";
+    num->setNumbers(3.8, 2.1);
     std::cout << num->calculate();
     delete num;
 
@@ -77,7 +125,24 @@ int main()
     color2->print();
     delete color2;
 
-    
+    //Task 3
+    Stack stack;
+    stack.reset();
+    stack.print();
+
+    stack.push(3);
+    stack.push(7);
+    stack.push(5);
+    stack.print();
+
+    stack.pop();
+    stack.print();
+
+    stack.pop();
+    stack.pop();
+    stack.print();
+
+    return 0;
     
 }
 
