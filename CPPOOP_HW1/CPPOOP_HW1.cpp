@@ -51,7 +51,8 @@ public:
 
     void print() 
     {
-        std::cout << "\n\nRed: " << static_cast<int>(m_red) << "\nGreen: " << static_cast<int>(m_green) << "\nBlue: " << static_cast<int>(m_blue) << "\nAlpha: " << static_cast<int>(m_alpha);
+        std::cout << "\n\nRed: " << static_cast<int>(m_red) << "\nGreen: " << static_cast<int>(m_green);
+        std::cout <<  "\nBlue: " << static_cast<int>(m_blue) << "\nAlpha: " << static_cast<int>(m_alpha);
     }
 private:
     std::uint8_t m_red, m_green, m_blue, m_alpha;
